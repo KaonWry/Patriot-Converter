@@ -1,2 +1,5 @@
 /env
 /units.txt
+/.qtcreator
+/ui/__pycache__
+/__pycache__
