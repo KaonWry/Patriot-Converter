@@ -37,11 +37,129 @@
      <number>10</number>
     </property>
     <item row="0" column="9">
-     <widget class="QLabel" name="label_2">
+     <widget class="QPushButton" name="btn_flip">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>26</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border: none;
+    background: transparent; /* Optional: Remove background as well */
+    font: 26pt &quot;Segoe UI&quot;; /* Example: Change font */
+    padding: 0;
+    text-align: center;
+}
+QPushButton:hover {
+    color: #0056b3; /* Optional: Add hover effects for interactivity */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>to</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="10">
+     <widget class="QComboBox" name="combo_unit_to">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <item>
+       <property name="text">
+        <string>inch</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>feet</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>yard</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>mile</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>banana</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>football field</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>basketball court</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Washington Monument</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>dollar bill</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>semi truck</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>bald eagle</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Empire State Building</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>hot dog</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>M4 carbine</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Grand Canyon</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="0" column="6">
+     <widget class="QLabel" name="label">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>6</horstretch>
+        <verstretch>6</verstretch>
        </sizepolicy>
       </property>
       <property name="font">
@@ -50,7 +168,7 @@
        </font>
       </property>
       <property name="text">
-       <string> to </string>
+       <string>Convert </string>
       </property>
      </widget>
     </item>
@@ -123,33 +241,25 @@
       </item>
      </layout>
     </item>
-    <item row="0" column="10">
-     <widget class="QComboBox" name="combo_unit_to">
+    <item row="0" column="7">
+     <widget class="QLineEdit" name="txt_amount">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="font">
        <font>
-        <pointsize>16</pointsize>
+        <pointsize>20</pointsize>
        </font>
       </property>
-      <item>
-       <property name="text">
-        <string>inch</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>feet</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>yard</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>mile</string>
-       </property>
-      </item>
+      <property name="inputMethodHints">
+       <set>Qt::InputMethodHint::ImhPreferNumbers</set>
+      </property>
+      <property name="maxLength">
+       <number>999999999</number>
+      </property>
      </widget>
     </item>
     <item row="4" column="6" colspan="5">
@@ -164,64 +274,6 @@
        </size>
       </property>
      </spacer>
-    </item>
-    <item row="8" column="10">
-     <layout class="QVBoxLayout" name="verticalLayout_3">
-      <item>
-       <widget class="QPushButton" name="btn_back">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>16</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Back</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="0" column="7">
-     <widget class="QLineEdit" name="txt_amount">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="maxLength">
-       <number>999999999</number>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="6">
-     <widget class="QLabel" name="label">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>6</horstretch>
-        <verstretch>6</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>26</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Convert </string>
-      </property>
-     </widget>
     </item>
     <item row="0" column="8" alignment="Qt::AlignmentFlag::AlignHCenter">
      <widget class="QComboBox" name="combo_unit_from">
@@ -250,6 +302,61 @@
         <string>mile</string>
        </property>
       </item>
+      <item>
+       <property name="text">
+        <string>banana</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>football field</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>basketball court</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Washington Monument</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>dollar bill</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>semi truck</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>bald eagle</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Empire State Building</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>hot dog</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>M4 carbine</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Grand Canyon</string>
+       </property>
+      </item>
      </widget>
     </item>
     <item row="1" column="6" colspan="5">
@@ -263,6 +370,28 @@
        <string/>
       </property>
      </widget>
+    </item>
+    <item row="8" column="10">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QPushButton" name="btn_back">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>

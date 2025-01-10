@@ -8,10 +8,18 @@ class LengthWindow(QMainWindow):
         self.ui = load_ui("ui/length_window.ui") 
         self.setCentralWidget(self.ui)
         
+        self.ui.btn_flip.clicked.connect(self.flip)
         self.ui.btn_convert.clicked.connect(self.convert)
         self.ui.btn_convert_all.clicked.connect(self.convert_all)
         self.ui.btn_back.clicked.connect(self.open_main_window)
-        
+                
+    def flip(self):
+        unit_from_index = self.ui.combo_unit_from.currentIndex()
+        unit_to_index = self.ui.combo_unit_to.currentIndex()
+
+        self.ui.combo_unit_from.setCurrentIndex(unit_to_index)
+        self.ui.combo_unit_to.setCurrentIndex(unit_from_index)
+    
     def open_main_window(self):
         from ui.loader.main_window import MainWindow
         self.main_window = MainWindow()

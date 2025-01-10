@@ -37,20 +37,36 @@
      <number>10</number>
     </property>
     <item row="0" column="9">
-     <widget class="QLabel" name="label_2">
+     <widget class="QPushButton" name="btn_flip">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
       <property name="font">
        <font>
+        <family>Segoe UI</family>
         <pointsize>26</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border: none;
+    background: transparent; /* Optional: Remove background as well */
+    font: 26pt &quot;Segoe UI&quot;; /* Example: Change font */
+    padding: 0;
+    text-align: center;
+}
+QPushButton:hover {
+    color: #0056b3; /* Optional: Add hover effects for interactivity */
+}
+</string>
+      </property>
       <property name="text">
-       <string> to </string>
+       <string>to</string>
       </property>
      </widget>
     </item>
@@ -67,6 +83,11 @@
         <pointsize>16</pointsize>
        </font>
       </property>
+      <item>
+       <property name="text">
+        <string>teaspoon</string>
+       </property>
+      </item>
       <item>
        <property name="text">
         <string>teaspoon</string>
@@ -100,6 +121,31 @@
       <item>
        <property name="text">
         <string>barrel</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>shot</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>bathub</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>teardrop</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>water drop</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>olympic swimming pool</string>
        </property>
       </item>
      </widget>
@@ -156,6 +202,31 @@
       <item>
        <property name="text">
         <string>barrel</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>shot</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>bathub</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>teardrop</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>water drop</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>olympic swimming pool</string>
        </property>
       </item>
      </widget>
