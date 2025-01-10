@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QMainWindow
-from ui_loader import load_ui
+from ui.ui_loader import load_ui
 
 class LengthWindow(QMainWindow):
     def __init__(self):

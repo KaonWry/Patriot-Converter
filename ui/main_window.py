@@ -1,6 +1,6 @@
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow
-from ui_loader import load_ui
+from ui.ui_loader import load_ui
 from ui.length_window import LengthWindow
 
 class MainWindow(QMainWindow):
