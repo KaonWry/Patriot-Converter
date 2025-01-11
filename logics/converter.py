@@ -12,7 +12,6 @@ unit_factors = {
         'semi truck': 840,  
         'bald eagle': 79.2,  
         'Empire State Building': 17448,  
-        'hot dog': 6,  
         'M4 carbine': 33,  
         'Grand Canyon': 63360
         },

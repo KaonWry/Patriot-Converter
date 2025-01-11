@@ -12,43 +12,54 @@ class ConversionWindow(QMainWindow):
         self.units = get_units(unit_type)
         self.fill_dropdowns(self.units)
         
-        self.ui.combo_unit_from.currentIndexChanged.connect(lambda: self.update_combo(self.ui.combo_unit_from, self.ui.combo_unit_to))
-        self.ui.combo_unit_to.currentIndexChanged.connect(lambda: self.update_combo(self.ui.combo_unit_to, self.ui.combo_unit_from))
+        self.ui.combo_unit_from.currentIndexChanged.connect(self.update_combo)
+        self.ui.combo_unit_to.currentIndexChanged.connect(self.update_combo)
 
         self.ui.btn_flip.clicked.connect(self.flip)
         self.ui.btn_convert.clicked.connect(self.convert)
         self.ui.btn_convert_all.clicked.connect(self.convert_all)
         self.ui.btn_back.clicked.connect(self.open_main_window)
+        
+    def disable_item_by_text(self, combo_box, text):
+        index = combo_box.findText(text)
+        if index != -1:
+            item = combo_box.model().item(index)
+            if item:
+                item.setEnabled(False)
+    
+    def enable_all_items(self, combo_box):
+        for i in range(combo_box.count()):
+            item = combo_box.model().item(i)
+            if item:
+                item.setEnabled(True)
+        
+    def update_combo(self):
+        selected_from = self.ui.combo_unit_from.currentText()
+        selected_to = self.ui.combo_unit_to.currentText()
+        self.enable_all_items(self.ui.combo_unit_from)
+        self.enable_all_items(self.ui.combo_unit_to)
+        self.disable_item_by_text(self.ui.combo_unit_from, selected_to)
+        self.disable_item_by_text(self.ui.combo_unit_to, selected_from)        
     
     def fill_dropdowns(self, unit_type):
         self.ui.combo_unit_from.clear()
         self.ui.combo_unit_to.clear()
         self.ui.combo_unit_from.addItems(unit_type)
-        self.ui.combo_unit_to.addItems([unit for unit in self.units if unit != self.ui.combo_unit_from.currentText()])
-        self.ui.combo_unit_from.clear()
-        self.ui.combo_unit_from.addItems([unit for unit in self.units if unit != self.ui.combo_unit_to.currentText()])
-
-    def update_combo(self, combo_change, combo_keep):
-        selected_change = combo_change.currentText()
-        selected_keep = combo_keep.currentText()
-        combo_keep.blockSignals(True)
-        combo_keep.clear()
-        combo_keep.addItems([unit for unit in self.units if unit != selected_change])
-        combo_keep.setCurrentText(selected_keep)
-        combo_keep.blockSignals(False) 
-                    
+        self.ui.combo_unit_from.setCurrentIndex(0)
+        self.ui.combo_unit_to.addItems(unit_type)
+        self.ui.combo_unit_to.setCurrentIndex(1)
+        self.update_combo()
+  
     def flip(self):
-        unit_from_index = self.ui.combo_unit_from.currentIndex()
-        unit_to_index = self.ui.combo_unit_to.currentIndex()
+        selected_from = self.ui.combo_unit_from.currentText()
+        selected_to = self.ui.combo_unit_to.currentText()
+        self.enable_all_items(self.ui.combo_unit_from)
+        self.enable_all_items(self.ui.combo_unit_to)
+        self.ui.combo_unit_from.setCurrentText(selected_to)
+        self.ui.combo_unit_to.setCurrentText(selected_from)
+        self.disable_item_by_text(self.ui.combo_unit_from, selected_from)
+        self.disable_item_by_text(self.ui.combo_unit_to, selected_to)
 
-        self.ui.combo_unit_from.blockSignals(True)
-        self.ui.combo_unit_to.blockSignals(True)
-
-        self.ui.combo_unit_from.setCurrentIndex(unit_to_index)
-        self.ui.combo_unit_to.setCurrentIndex(unit_from_index)
-
-        self.ui.combo_unit_from.blockSignals(False)
-        self.ui.combo_unit_to.blockSignals(False)
     
     def open_main_window(self):
         from ui.loader.main_window import MainWindow
