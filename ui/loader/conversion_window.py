@@ -25,7 +25,7 @@ class ConversionWindow(QMainWindow):
         self.ui.combo_unit_to.clear()
         self.ui.combo_unit_from.addItems(unit_type)
         self.ui.combo_unit_to.addItems(unit_type)        
-        self.update_combo_unit_to()
+        self.update_combo(self.ui.combo_unit_from, self.ui.combo_unit_to)
 
     def update_combo(self, combo_change, combo_keep):
         selected_change = combo_change.currentText()
