@@ -24,8 +24,9 @@ class ConversionWindow(QMainWindow):
         self.ui.combo_unit_from.clear()
         self.ui.combo_unit_to.clear()
         self.ui.combo_unit_from.addItems(unit_type)
-        self.ui.combo_unit_to.addItems(unit_type)        
-        self.update_combo(self.ui.combo_unit_from, self.ui.combo_unit_to)
+        self.ui.combo_unit_to.addItems([unit for unit in self.units if unit != self.ui.combo_unit_from.currentText()])
+        self.ui.combo_unit_from.clear()
+        self.ui.combo_unit_from.addItems([unit for unit in self.units if unit != self.ui.combo_unit_to.currentText()])
 
     def update_combo(self, combo_change, combo_keep):
         selected_change = combo_change.currentText()
@@ -37,10 +38,17 @@ class ConversionWindow(QMainWindow):
         combo_keep.blockSignals(False) 
                     
     def flip(self):
-        unit_from_index = self.ui.combo_unit_from.currentText()
-        unit_to_index = self.ui.combo_unit_to.currentText()
-        self.ui.combo_unit_from.setCurrentText(unit_to_index)
-        self.ui.combo_unit_to.setCurrentText(unit_from_index)
+        unit_from_index = self.ui.combo_unit_from.currentIndex()
+        unit_to_index = self.ui.combo_unit_to.currentIndex()
+
+        self.ui.combo_unit_from.blockSignals(True)
+        self.ui.combo_unit_to.blockSignals(True)
+
+        self.ui.combo_unit_from.setCurrentIndex(unit_to_index)
+        self.ui.combo_unit_to.setCurrentIndex(unit_from_index)
+
+        self.ui.combo_unit_from.blockSignals(False)
+        self.ui.combo_unit_to.blockSignals(False)
     
     def open_main_window(self):
         from ui.loader.main_window import MainWindow
