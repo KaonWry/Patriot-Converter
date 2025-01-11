@@ -37,10 +37,10 @@ class ConversionWindow(QMainWindow):
         combo_keep.blockSignals(False) 
                     
     def flip(self):
-        unit_from_index = self.ui.combo_unit_from.currentIndex()
-        unit_to_index = self.ui.combo_unit_to.currentIndex()
-        self.ui.combo_unit_from.setCurrentIndex(unit_to_index)
-        self.ui.combo_unit_to.setCurrentIndex(unit_from_index)
+        unit_from_index = self.ui.combo_unit_from.currentText()
+        unit_to_index = self.ui.combo_unit_to.currentText()
+        self.ui.combo_unit_from.setCurrentText(unit_to_index)
+        self.ui.combo_unit_to.setCurrentText(unit_from_index)
     
     def open_main_window(self):
         from ui.loader.main_window import MainWindow
