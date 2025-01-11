@@ -6,14 +6,14 @@ unit_factors = {
         'mile': 63360,
         'banana': 6, 
         'football field': 360*12,  
-        'basketball court': 1128, 
+        'basketball court': 94*12, 
         'Washington Monument': 6660,  
         'dollar bill': 6.14,  
-        'semi truck': 840,  
-        'bald eagle': 79.2,  
-        'Empire State Building': 17448,  
+        'semi truck': 75*12,  
+        'bald eagle': 79,  
+        'Empire State Building': 1454*12,  
         'M4 carbine': 33,  
-        'Grand Canyon': 63360
+        'Grand Canyon': 6000*12
         },
     
     'volume': {
@@ -25,9 +25,8 @@ unit_factors = {
         'gallon': 768,
         'barrel': 32256,
         'shot': 9,
-        'bathtub': 61440,
-        'teardrop': 0.25,
-        'olympic swimming pool': 5068800000,
+        'bathtub': 80*768,
+        'olympic swimming pool': 660430*768,
         'water drop': 0.001
         },
     
@@ -36,16 +35,16 @@ unit_factors = {
         'pound': 7000,
         'stone': 98000,
         'ton': 14000000,
-        'long ton': 15680000,
+        'long ton': 15430000,
         'paperclip': 15.4,  
-        'penny': 38.5, 
+        'penny': 24, 
         'dollar bill': 15.4,  
-        'semi truck': 907184, 
-        'football': 6538, 
-        'big mac': 448, 
-        'banana': 154,  
-        'house cat': 150000, 
-        'elephant': 181437600
+        'semi truck': 280000000, 
+        'football': 15*7000, 
+        'big mac': 3395, 
+        'banana': 1559,  
+        'house cat': 63000, 
+        'elephant': 92594000
         },
 }
 
