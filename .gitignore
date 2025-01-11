@@ -3,8 +3,8 @@
 /ui/loader/__pycache__
 /logics/__pycache__
 /__pycache__
-/misc
 /dist
 /build
 *.spec
 /build.bat
+/sandbox
