@@ -59,7 +59,6 @@ def format_number(number):
 def convert_unit(unit_type, amount, unit_from, unit_to):
     factors = unit_factors[unit_type]
     converted = amount * (factors[unit_from]/factors[unit_to])
-    
     txt_result = f'{format_number(amount)} {unit_from} is equal to {format_number(converted)} {unit_to}'
     print(txt_result)
     return txt_result

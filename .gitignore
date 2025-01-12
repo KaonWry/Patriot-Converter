@@ -6,5 +6,4 @@
 /dist
 /build
 *.spec
-/build.bat
 /sandbox
