@@ -31,7 +31,7 @@ For those brave souls who want to build the app themselves, follow these steps. 
 
 1. **Download the repository** or clone it:
     ```bash
-    git clone https://github.com/your-repo/PatriotConverter.git
+    git clone https://github.com/KaonWry/Patriot-Converter.git
     cd PatriotConverter
     ```
 
